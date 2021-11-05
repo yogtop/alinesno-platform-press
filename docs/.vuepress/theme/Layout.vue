@@ -7,7 +7,7 @@
   >
 
     <span class="dashboard-home" @click="dashboardHome">
-      <img class="icon" src="/alinesno-platform-press/svg/screen_check.svg" />
+      <img class="icon" src="/svg/screen_check.svg" />
       <span class="label"> 工作台 </span>
     </span>
 
@@ -177,7 +177,7 @@ export default {
   },
   methods: {
     dashboardHome() {
-      var saasUrl = 'http://v212.ui.saas.dev.lbxinhu.linesno.com:23456/'
+      var saasUrl = '/' ; // 'http://v212.ui.saas.dev.lbxinhu.linesno.com:23456/'
       window.location.href = saasUrl
     },
     checkLang() {
