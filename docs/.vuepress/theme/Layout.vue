@@ -7,7 +7,7 @@
   >
 
     <span class="dashboard-home" @click="dashboardHome">
-      <img class="icon" src="/framework-docs-templates/svg/screen_check.svg" />
+      <img class="icon" src="/alinesno-platform-press/svg/screen_check.svg" />
       <span class="label"> 工作台 </span>
     </span>
 
