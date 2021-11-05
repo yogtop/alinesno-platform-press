@@ -33,6 +33,12 @@
 
 <img src="./images/paas.jpg">
 
+整体数字化平台功能架构
+
+> 此图来自端点科技架构功能，后期更新
+
+<img src="./images/tech.webp">
+
 组织管理中台架构
 
 <img src="./images/group.jpg">
