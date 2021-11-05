@@ -5,12 +5,7 @@
     @touchstart="onTouchStart"
     @touchend="onTouchEnd"
   >
-
-    <span class="dashboard-home" @click="dashboardHome">
-      <img style="width:19px" src="/svg/screen_check.svg" />
-      <span style="position: absolute;margin-left: 10px;"> 工作台 </span>
-    </span>
-
+ 
     <!-- <div v-if="isHome||isDonate" id="codefund" class="home-codefund" /> -->
 
     <Navbar v-if="shouldShowNavbar" @toggle-sidebar="toggleSidebar" />
