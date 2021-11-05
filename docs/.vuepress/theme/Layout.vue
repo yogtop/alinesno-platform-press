@@ -383,14 +383,11 @@ export default {
   cursor: pointer;
 }
 
-.icon {
-  // width: 19px;
-  // position: absolute;
+.icon { 
   margin-top: 7px;
 }
 
-.label {
-  // margin-left: 24px;
+.label { 
   padding-top: 7px;
   position: absolute;
 }
