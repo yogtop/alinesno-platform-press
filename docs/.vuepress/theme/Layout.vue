@@ -7,8 +7,8 @@
   >
 
     <span class="dashboard-home" @click="dashboardHome">
-      <img class="icon" src="/svg/screen_check.svg" />
-      <span class="label"> 工作台 </span>
+      <img style="width:19px" src="/svg/screen_check.svg" />
+      <span style="position: absolute;margin-left: 10px;"> 工作台 </span>
     </span>
 
     <!-- <div v-if="isHome||isDonate" id="codefund" class="home-codefund" /> -->
@@ -384,13 +384,13 @@ export default {
 }
 
 .icon {
-  width: 19px;
-  position: absolute;
+  // width: 19px;
+  // position: absolute;
   margin-top: 7px;
 }
 
 .label {
-  margin-left: 24px;
+  // margin-left: 24px;
   padding-top: 7px;
   position: absolute;
 }
