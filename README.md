@@ -27,7 +27,7 @@
 
 整体数字化底座架构规划:
 
-<img src="./images/platform.jpg" style="width:700px">
+<img src="./images/platform.jpg">
 
 基础PaaS平台架构
 
