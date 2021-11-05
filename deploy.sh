@@ -16,6 +16,6 @@ git init
 git add -A
 git commit -m 'deploy'
 
-git push -f "https://${access_token}@github.com/alinesno-cloud/alinesno-framework-docs-templates.git" master:gh-pages
+git push -f "https://${access_token}@github.com/alinesno-cloud/alinesno-platform-press.git" master:gh-pages
 
 cd -
