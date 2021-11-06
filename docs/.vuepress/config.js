@@ -60,7 +60,7 @@ module.exports = {
         nav: [
           {
             text: '解决方案',
-            icon: 'home',
+            icon: 'fas fa-pencil-ruler',
             link: '/solution/'
           },
           {
@@ -93,6 +93,13 @@ module.exports = {
           }
         ],
         sidebar: {
+          '/solution/': [
+            {
+              title: '解决方案',
+              collapsable: false,
+              children: genSolutionSidebar()
+            }
+          ],
           '/design/': [
             {
               title: '数字规划',
@@ -198,21 +205,42 @@ function genEssentialsSidebar() {
   })
 }
 
+/**
+ * 处理解决方案菜单列表
+ * @returns
+ */
+function genSolutionSidebar() {
+  const mapArr = [
+    '/solution/01_方案概述.md',
+    '/solution/02_文档计划.md',
+    '/solution/03_数字化政务解决方案.md',
+    '/solution/04_数字化校园解决方案.md',
+    '/solution/05_智慧社区解决方案.md',
+    '/solution/06_智慧农业解决方案.md',
+    '/solution/07_企业数字化转型方案.md',
+    '/solution/08_智慧城市解决方案.md',
+    '/solution/20_落地实战案例.md'
+  ]
+  return mapArr.map(i => {
+    return i
+  })
+}
+
 function genVideoSidebar() {
   const mapArr = [
-    '/guide/advanced/cors.md',
-    '/guide/advanced/eslint.md',
-    '/guide/advanced/git-hook.md',
-    '/guide/advanced/style-guide.md',
-    '/guide/advanced/lazy-loading.md',
-    '/guide/advanced/chart.md',
-    '/guide/advanced/icon.md',
-    '/guide/advanced/cdn.md',
-    '/guide/advanced/theme.md',
-    '/guide/advanced/i18n.md',
-    '/guide/advanced/error.md',
-    '/guide/advanced/webpack.md',
-    '/guide/advanced/sass.md'
+    '/about/advanced/cors.md',
+    '/about/advanced/eslint.md',
+    '/about/advanced/git-hook.md',
+    '/about/advanced/style-guide.md',
+    '/about/advanced/lazy-loading.md',
+    '/about/advanced/chart.md',
+    '/about/advanced/icon.md',
+    '/about/advanced/cdn.md',
+    '/about/advanced/theme.md',
+    '/about/advanced/i18n.md',
+    '/about/advanced/error.md',
+    '/about/advanced/webpack.md',
+    '/about/advanced/sass.md'
   ]
   return mapArr.map(i => {
     return i
