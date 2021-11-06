@@ -7,13 +7,22 @@
       <h1>{{ title }}</h1>
 
       <p class="description">
-        AlinesnoCloud 是一款高性能、轻量级的开源 Java 服务框架
+        数字化转型的最佳平台，协助企业中小企业快速平台化、中台化、数字化
       </p>
 
       <p v-if="data.actionText && data.actionLink" class="action">
         <NavLink class="action-button" :item="actionLink" />
       </p>
     </div>
+
+    <section class="row td-box td-box--primary position-relative td-box--gradient td-box--height-auto">
+      <div class="container text-center td-arrow-down">
+        <span class="h4 mb-0">
+          <h3>企业数字化转型赋能</h3>
+          <p>灵活满足企业数字化建设中各种场景的需要，更高效、专注的沉淀业务和数据能力，进而形成企业的业务和数据中台</p>
+        </span>
+      </div>
+    </section>
 
     <div class="features-box">
       <div v-if="featuresAll.length" class="features">
@@ -33,7 +42,9 @@
 
     <div class="hero-section">
       <p class="title">加入讨论</p>
-      <p class="description">通过以下方式加入讨论，或为AlinesnoCloud添砖加瓦</p>
+      <p class="description" style="width:80%;max-width:700px;margin:auto;">
+        通过以下方式加入讨论，或为数字化建设添砖加瓦
+      </p>
     </div>
 
     <div class="footer-section">
@@ -76,7 +87,7 @@ export default {
   components: { NavLink },
   data() {
     return {
-      title: '服务化引擎框架',
+      title: '企业级数字化底座',
       saasTitle: '新狐云数字化平台',
       saasUrl: 'http://v212.ui.saas.dev.lbxinhu.linesno.com:23456/',
       featuresAll: [
@@ -157,7 +168,7 @@ $accentColor = #005bd4;
 
   .hero {
     text-align: center;
-    padding: 2rem 0px;
+    padding: 6rem 0px;
 
     >img {
       max-height: 180px;
@@ -174,7 +185,7 @@ $accentColor = #005bd4;
     }
 
     .description {
-      max-width: 35rem;
+      max-width: 65rem;
       font-size: 1.25rem;
       line-height: 1.3;
       color: lighten($textColor, 40%);
@@ -356,4 +367,34 @@ $accentColor = #005bd4;
     width: 45px;
   }
 }
+
+.td-box--primary {
+    color: #fff;
+    background-color: #2ba3de;
+    padding-top: 4rem;
+    padding-bottom: 4rem;
+    text-align: center!important;
+    font-size: 1rem;
+    font-weight: 400;
+
+    .td-arrow-down{
+      max-width: 1140px;
+      margin: auto;
+      font-size: 18px;
+    }
+
+    .td-arrow-down::before {
+      left: 50%;
+      margin-left: -30px;
+      bottom: -10px;
+      border-style: solid;
+      border-width: 25px 30px 0;
+      border-color: #2ba3de transparent transparent transparent;
+      z-index: 3;
+      position: absolute;
+      content: "";
+  }
+
+}
+
 </style>

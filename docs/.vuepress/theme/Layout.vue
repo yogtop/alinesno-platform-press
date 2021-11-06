@@ -172,7 +172,7 @@ export default {
   },
   methods: {
     dashboardHome() {
-      var saasUrl = '/' ; // 'http://v212.ui.saas.dev.lbxinhu.linesno.com:23456/'
+      var saasUrl = '/' // 'http://v212.ui.saas.dev.lbxinhu.linesno.com:23456/'
       window.location.href = saasUrl
     },
     checkLang() {
@@ -378,12 +378,12 @@ export default {
   cursor: pointer;
 }
 
-.icon { 
+.icon {
   margin-top: 7px;
 }
 
-.label { 
+.label {
   padding-top: 7px;
-  position: absolute;
+  /* position: absolute; */
 }
 </style>
