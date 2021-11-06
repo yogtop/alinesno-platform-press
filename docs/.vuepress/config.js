@@ -186,20 +186,7 @@ function genCommonCoreSidebar() {
 }
 
 function genEssentialsSidebar() {
-  const mapArr = [
-    '/guide/',
-    '/guide/essentials/layout.md',
-    '/guide/essentials/router-and-nav.md',
-    '/guide/essentials/permission.md',
-    '/guide/essentials/tags-view.md',
-    '/guide/essentials/new-page.md',
-    '/guide/essentials/style.md',
-    '/guide/essentials/server.md',
-    '/guide/essentials/mock-api.md',
-    '/guide/essentials/import.md',
-    '/guide/essentials/deploy.md',
-    '/guide/essentials/env.md'
-  ]
+  const mapArr = ['/guide/README.md']
   return mapArr.map(i => {
     return i
   })
@@ -227,42 +214,14 @@ function genSolutionSidebar() {
 }
 
 function genVideoSidebar() {
-  const mapArr = [
-    '/about/advanced/cors.md',
-    '/about/advanced/eslint.md',
-    '/about/advanced/git-hook.md',
-    '/about/advanced/style-guide.md',
-    '/about/advanced/lazy-loading.md',
-    '/about/advanced/chart.md',
-    '/about/advanced/icon.md',
-    '/about/advanced/cdn.md',
-    '/about/advanced/theme.md',
-    '/about/advanced/i18n.md',
-    '/about/advanced/error.md',
-    '/about/advanced/webpack.md',
-    '/about/advanced/sass.md'
-  ]
+  const mapArr = ['/solution/01_方案概述.md']
   return mapArr.map(i => {
     return i
   })
 }
 
 function genAdvancedSidebar() {
-  const mapArr = [
-    '/guide/advanced/cors.md',
-    '/guide/advanced/eslint.md',
-    '/guide/advanced/git-hook.md',
-    '/guide/advanced/style-guide.md',
-    '/guide/advanced/lazy-loading.md',
-    '/guide/advanced/chart.md',
-    '/guide/advanced/icon.md',
-    '/guide/advanced/cdn.md',
-    '/guide/advanced/theme.md',
-    '/guide/advanced/i18n.md',
-    '/guide/advanced/error.md',
-    '/guide/advanced/webpack.md',
-    '/guide/advanced/sass.md'
-  ]
+  const mapArr = ['/solution/01_方案概述.md']
   return mapArr.map(i => {
     return i
   })
