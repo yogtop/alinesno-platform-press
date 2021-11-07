@@ -41,6 +41,10 @@
       </div>
     </div>
 
+    <!-- 案例说明_start -->
+    <case-temp />
+    <!-- 案例说明_end -->
+
     <div class="hero-section">
       <p class="title">加入讨论</p>
       <p class="description" style="width:80%;max-width:700px;margin:auto;">
@@ -82,10 +86,12 @@
 
 <script>
 import NavLink from '@default-theme/NavLink.vue'
+import CaseTemp from './Case.vue'
+
 import { isGitee } from './utils'
 
 export default {
-  components: { NavLink },
+  components: { NavLink, CaseTemp },
   data() {
     return {
       title: '企业级数字化底座',

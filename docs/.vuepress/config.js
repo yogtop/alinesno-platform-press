@@ -59,11 +59,6 @@ module.exports = {
         editLinkText: '在 GitHub 上编辑此页',
         nav: [
           {
-            text: '解决方案',
-            icon: 'fas fa-pencil-ruler',
-            link: '/solution/'
-          },
-          {
             text: '数字规划',
             link: '/design/'
           },
@@ -84,6 +79,11 @@ module.exports = {
             link: '/business/'
           },
           {
+            text: '解决方案',
+            icon: 'fas fa-pencil-ruler',
+            link: '/solution/'
+          },
+          {
             text: '建设教程',
             link: '/learn/'
           },
@@ -98,27 +98,37 @@ module.exports = {
               title: '解决方案',
               collapsable: false,
               children: genSolutionSidebar()
+            },
+            {
+              title: '业务中台',
+              collapsable: false,
+              children: genAdvancedSidebar('/')
+            },
+            {
+              title: '数据中台',
+              collapsable: false,
+              children: genAdvancedSidebar('/')
             }
           ],
           '/design/': [
             {
               title: '数字规划',
               collapsable: false,
-              children: genVideoSidebar()
+              children: genDesignSidebar()
             }
           ],
           '/env/': [
             {
               title: '环境建设',
               collapsable: false,
-              children: genVideoSidebar()
+              children: genEnvSidebar()
             }
           ],
           '/platform/': [
             {
               title: '技术(PaaS)中台',
               collapsable: false,
-              children: genEssentialsSidebar()
+              children: genPlatformsSidebar()
             },
             {
               title: '业务中台',
@@ -187,6 +197,39 @@ function genCommonCoreSidebar() {
 
 function genEssentialsSidebar() {
   const mapArr = ['/guide/README.md']
+  return mapArr.map(i => {
+    return i
+  })
+}
+
+/**
+ * 中台搭建菜单列表
+ * @returns
+ */
+function genPlatformsSidebar() {
+  const mapArr = ['/platform/01_方案概述.md']
+  return mapArr.map(i => {
+    return i
+  })
+}
+
+/**
+ * 环境搭建菜单列表
+ * @returns
+ */
+function genEnvSidebar() {
+  const mapArr = ['/env/01_方案概述.md']
+  return mapArr.map(i => {
+    return i
+  })
+}
+
+/**
+ * 数字规划菜单列表
+ * @returns
+ */
+function genDesignSidebar() {
+  const mapArr = ['/design/01_方案概述.md']
   return mapArr.map(i => {
     return i
   })

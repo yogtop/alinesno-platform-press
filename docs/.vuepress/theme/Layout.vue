@@ -148,7 +148,7 @@ export default {
     }
   },
   mounted() {
-    loadGitter()
+    // loadGitter()
     if (!this.isCN) {
       loadCarbon()
     }
