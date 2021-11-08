@@ -391,17 +391,17 @@ $accentColor = #005bd4;
       font-size: 18px;
     }
 
-    .td-arrow-down::before {
-      left: 50%;
-      margin-left: -30px;
-      bottom: 0px;
-      border-style: solid;
-      border-width: 25px 30px 0;
-      border-color: #2ba3de transparent transparent transparent;
-      z-index: 3;
-      position: absolute;
-      content: "";
-  }
+    .td-box--primary:before {
+        left: 50%;
+        margin-left: -30px;
+        bottom: -40px;
+        border-style: solid;
+        border-width: 25px 30px 0;
+        border-color: #2ba3de transparent transparent transparent;
+        z-index: 3;
+        position: absolute;
+        content: "";
+    }
 
 }
 
