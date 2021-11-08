@@ -145,7 +145,7 @@
   .friend {
     text-align: center;
     float: left ;
-    width: 230px ; 
+    width: 220px ; 
     margin-bottom: 50px;
     margin-top: 20px;
 
