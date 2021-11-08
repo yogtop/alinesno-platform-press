@@ -98,7 +98,7 @@
 
 <style lang="stylus" scoped>
 .item-namespace {
-  width: 100%;
+  width: calc(100% - 100px);
   margin: auto;
   background: #f7fbfd;
   padding: 50px;
