@@ -112,21 +112,51 @@ module.exports = {
           ],
           '/design/': [
             {
-              title: '数字规划',
+              title: '平台介绍',
               collapsable: false,
-              children: genDesignSidebar()
+              children: genDesignSidebar(1)
+            },
+            {
+              title: '平台架构',
+              collapsable: false,
+              children: genDesignSidebar(2)
+            },
+            {
+              title: '项目规划',
+              collapsable: false,
+              children: genDesignSidebar(3)
+            },
+            {
+              title: '建设规划',
+              collapsable: false,
+              children: genDesignSidebar(4)
             }
           ],
           '/env/': [
             {
-              title: '环境建设',
+              title: '研发环境',
               collapsable: false,
-              children: genEnvSidebar()
+              children: genEnvSidebar(1)
+            },
+            {
+              title: 'PaaS环境',
+              collapsable: false,
+              children: genEnvSidebar(2)
+            },
+            {
+              title: '大数据环境',
+              collapsable: false,
+              children: genEnvSidebar(3)
+            },
+            {
+              title: '运维环境',
+              collapsable: false,
+              children: genEnvSidebar(4)
             }
           ],
           '/platform/': [
             {
-              title: '技术(PaaS)中台',
+              title: 'PaaS平台',
               collapsable: false,
               children: genPlatformsSidebar()
             },
@@ -145,28 +175,43 @@ module.exports = {
             {
               title: '组织架构',
               collapsable: false,
-              children: genVideoSidebar()
+              children: genGroupSidebar()
+            },
+            {
+              title: '组织架构',
+              collapsable: false,
+              children: genGroupSidebar()
             }
           ],
           '/business/': [
             {
               title: '业务建设',
               collapsable: false,
-              children: genVideoSidebar()
+              children: genBusinessSidebar()
             }
           ],
           '/learn/': [
             {
-              title: '视频教程',
+              title: '社区教程',
               collapsable: false,
-              children: genVideoSidebar()
+              children: genLearnSidebar(1)
+            },
+            {
+              title: '企业教程',
+              collapsable: false,
+              children: genLearnSidebar(2)
+            },
+            {
+              title: '培训文档',
+              collapsable: false,
+              children: genLearnSidebar(3)
             }
           ],
           '/about/': [
             {
               title: '关于',
               collapsable: false,
-              children: genVideoSidebar()
+              children: genAboutSidebar()
             }
           ]
         }
@@ -188,15 +233,56 @@ module.exports = {
   }
 }
 
-function genCommonCoreSidebar() {
-  const mapArr = ['/guide/']
+/**
+ * 视频教程菜单列表
+ * @returns
+ */
+function genLearnSidebar(menus) {
+  if (menus == 1) {
+    const mapArr = [
+      '/learn/02_初级培训员.md',
+      '/learn/03_中级培训员.md',
+      '/learn/04_高级培训员.md',
+      '/learn/05_方案培训员.md'
+    ]
+    return mapArr.map(i => {
+      return i
+    })
+  } else if (menus == 2) {
+    const mapArr = ['/learn/11_视频培训.md', '/learn/12_直播培训.md']
+    return mapArr.map(i => {
+      return i
+    })
+  } else if (menus == 3) {
+    const mapArr = [
+      '/learn/41_培训文档包.md',
+      '/learn/42_高级培训文档.md',
+      '/learn/43_软件工具包.md',
+      '/learn/44_相关培训脚本.md'
+    ]
+    return mapArr.map(i => {
+      return i
+    })
+  }
+}
+
+/**
+ * 业务建设菜单列表
+ * @returns
+ */
+function genBusinessSidebar() {
+  const mapArr = ['/business/01_方案概述.md']
   return mapArr.map(i => {
     return i
   })
 }
 
-function genEssentialsSidebar() {
-  const mapArr = ['/guide/README.md']
+/**
+ * 组织搭建菜单列表
+ * @returns
+ */
+function genGroupSidebar() {
+  const mapArr = ['/group/01_方案概述.md']
   return mapArr.map(i => {
     return i
   })
@@ -217,22 +303,92 @@ function genPlatformsSidebar() {
  * 环境搭建菜单列表
  * @returns
  */
-function genEnvSidebar() {
-  const mapArr = ['/env/01_方案概述.md']
-  return mapArr.map(i => {
-    return i
-  })
+function genEnvSidebar(menus) {
+  if (menus == 1) {
+    const mapArr = ['/env/01_方案概述.md']
+
+    return mapArr.map(i => {
+      return i
+    })
+  } else if (menus == 2) {
+    const mapArr = ['/env/01_方案概述.md']
+
+    return mapArr.map(i => {
+      return i
+    })
+  } else if (menus == 3) {
+    const mapArr = ['/env/01_方案概述.md']
+
+    return mapArr.map(i => {
+      return i
+    })
+  } else if (menus == 4) {
+    const mapArr = ['/env/01_方案概述.md']
+
+    return mapArr.map(i => {
+      return i
+    })
+  }
 }
 
 /**
  * 数字规划菜单列表
  * @returns
  */
-function genDesignSidebar() {
-  const mapArr = ['/design/01_方案概述.md']
-  return mapArr.map(i => {
-    return i
-  })
+function genDesignSidebar(menus) {
+  if (menus == 1) {
+    // 平台介绍
+    const mapArr = [
+      '/design/01_数字化方案概述.md',
+      '/design/03_当前行业发展.md',
+      '/design/03_1_企业发展建设意义.md',
+      '/design/02_项目执行计划.md'
+    ]
+
+    return mapArr.map(i => {
+      return i
+    })
+  } else if (menus == 2) {
+    // 平台架构
+    const mapArr = [
+      '/design/04_数字化战略架构.md',
+      '/design/05_技术平台架构设计.md',
+      '/design/06_业务中台架构设计.md',
+      '/design/07_数据中台架构设计.md',
+      '/design/08_服务架构设计.md',
+      '/design/09_容器化架构设计.md',
+      '/design/10_私有云部署架构设计.md',
+      '/design/11_混合云架构设计.md',
+      '/design/12_平台运维架构设计.md'
+    ]
+
+    return mapArr.map(i => {
+      return i
+    })
+  } else if (menus == 3) {
+    // 项目规划
+    const mapArr = [
+      '/design/13_中台组织架构设计.md',
+      '/design/14_项目组织架构设计.md',
+      '/design/15_团队管理架构设计.md'
+    ]
+
+    return mapArr.map(i => {
+      return i
+    })
+  } else if (menus == 4) {
+    // 建设规划
+    const mapArr = [
+      '/design/16_企业建设方案.md',
+      '/design/17_建设过程整体方案.md',
+      '/design/19_核心业务建设方案.md',
+      '/design/20_多业务整合建设方案.md'
+    ]
+
+    return mapArr.map(i => {
+      return i
+    })
+  }
 }
 
 /**
@@ -256,8 +412,12 @@ function genSolutionSidebar() {
   })
 }
 
-function genVideoSidebar() {
-  const mapArr = ['/solution/01_方案概述.md']
+/**
+ * 获取关于我们的菜单列表
+ * @returns
+ */
+function genAboutSidebar() {
+  const mapArr = ['/about/01_方案概述.md']
   return mapArr.map(i => {
     return i
   })
