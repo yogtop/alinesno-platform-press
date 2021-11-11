@@ -1,0 +1,29 @@
+#author luoye
+version: "3" #版本号
+services:
+  portainer:
+    image: portainer/portainer
+    container_name: "portainer-app"
+    ports:
+        - "9001:9000"
+
+  elasticsearch:
+    image: elasticsearch
+    ports:
+     - "9200:9200"   # REST API端口
+     - "9300:9300"   # RPC端口
+  logstash:
+    image: logstash
+    # command: logstash -f /etc/logstash/conf.d/logstash.conf
+    command: logstash -f ./elk/logstash.conf
+    volumes:
+     - /tmp/config:/etc/logstash/conf.d
+     - /tmp/build:/opt/build
+    ports:
+     - "5000:5000"
+  kibana:
+    image: kibana
+    environment:
+     - ELASTICSEARCH_URL=http://elasticsearch:9200
+    ports:
+     - "5601:5601"

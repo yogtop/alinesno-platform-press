@@ -1,0 +1,26 @@
+version: '3'
+
+networks:
+  devnet:
+    driver: bridge
+
+services:
+ nexus:
+  image: sonatype/nexus
+  container_name: nexus
+  ports:
+    - "8081:8081"
+  networks:
+    - devnet
+  volumes:
+    - "/tmp/nexus/:/var/lib/nexus"
+
+ jenkins:
+  image: jenkins
+  container_name: jenkins
+  ports:
+    - "8080:8080"
+  networks:
+    - devnet
+  volumes:
+    - "/tmp/jenkins:/var/jenkins_ho$me"
