@@ -11,7 +11,7 @@ jobs:
     env:
       # 配置环境变量，包括阿里云镜像的名称，版本号，还有命名空间
       ALIYUN_CR_HOST: registry.cn-shenzhen.aliyuncs.com
-      ALIYUN_CR_NAMESPACE: alinesno-cloud
+      ALIYUN_CR_NAMESPACE: alinesno-cloud-incubator
       PRO_NAME: alinesno-platform-press
       PRO_VERSION: 0.0.1 
       EXPOSE_PORT: 81
