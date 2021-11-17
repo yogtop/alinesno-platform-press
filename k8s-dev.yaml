@@ -24,7 +24,7 @@ spec:
       - name: docker-login
       containers:
       - name: dev-alinesno-platform-press
-        image: registry-vpc.cn-shenzhen.aliyuncs.com/alinesno-cloud-incubator/alinesno-platform-press:0.0.1
+        image: registry-vpc.cn-shenzhen.aliyuncs.com/alinesno-cloud/alinesno-platform-press:0.0.1
         ports:
         - containerPort: 80
           protocol: TCP

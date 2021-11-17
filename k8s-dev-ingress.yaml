@@ -2,10 +2,10 @@ apiVersion: extensions/v1beta1
 kind: Ingress
 metadata:
   name: dev-alinesno-platform-press
-  namespace: alinesno-cloud-incubator
+  namespace: product-alinesno-cloud
 spec:
   rules:
-    - host: dev-alinesno-platform-press.beta.linesno.com
+    - host: dev-alinesno-platform-press.dev.lbxinhu.linesno.com
       http:
         paths:
           - path: /
