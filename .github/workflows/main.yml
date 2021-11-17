@@ -8,6 +8,13 @@ on:
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
+    env:
+      # 配置环境变量，包括阿里云镜像的名称，版本号，还有命名空间
+      ALIYUN_CR_HOST: registry.cn-shenzhen.aliyuncs.com
+      ALIYUN_CR_NAMESPACE: alinesno-cloud
+      PRO_NAME: alinesno-platform-press
+      PRO_VERSION: 0.0.1 
+      EXPOSE_PORT: 81
     steps:
       - name: Checkout 🛎️
         uses: actions/checkout@v2 # If you're using actions/checkout@v2 you must set persist-credentials to false in most cases for the deployment to work correctly.
@@ -18,9 +25,38 @@ jobs:
         run: |
           yarn install
           yarn run build
+
       - name: Deploy 🚀
         uses: JamesIves/github-pages-deploy-action@releases/v3
         with:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           BRANCH: gh-pages # The branch the action should deploy to.
           FOLDER: docs/.vuepress/dist # The folder the action should deploy.
+
+      - name: Build the Docker image
+        run: |
+          docker version
+          # 登录阿里云镜像仓库
+          docker login --username=${{ secrets.DOCKER_USERNAME }} --password=${{ secrets.DOCKER_PASSWORD }} registry.cn-shenzhen.aliyuncs.com
+
+          # 使用Dockerfile构建镜像
+          docker build . --file Dockerfile --tag ${{ env.ALIYUN_CR_HOST }}/${{ env.ALIYUN_CR_NAMESPACE }}/${{ env.PRO_NAME }}:${{ env.PRO_VERSION }}
+
+          # 推送镜像到镜像仓库
+          docker push ${{ env.ALIYUN_CR_HOST }}/${{ env.ALIYUN_CR_NAMESPACE }}/${{ env.PRO_NAME }}:${{ env.PRO_VERSION }}
+
+      - name: Deploy Docker multiple command
+        uses: appleboy/ssh-action@master
+        with:
+          host: ${{ secrets.HOST }}
+          username: ${{ secrets.USERNAME }}
+          password: ${{ secrets.PASSWORD }}
+          port: ${{ secrets.PORT }}
+          script: |
+            docker rm -f ${{ env.PRO_VERSION }} 
+            docker pull ${{ env.ALIYUN_CR_HOST }}/${{ env.ALIYUN_CR_NAMESPACE }}/${{ env.PRO_NAME }}:${{ env.PRO_VERSION }}
+            docker run -p ${{ env.EXPOSE_PORT }}:80 --name ${{ env.PRO_VERSION }} --restart="always" -d ${{ env.ALIYUN_CR_HOST }}/${{ env.ALIYUN_CR_NAMESPACE }}/${{ env.PRO_NAME }}:${{ env.PRO_VERSION }}
+
+
+
+
