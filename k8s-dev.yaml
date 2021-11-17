@@ -1,0 +1,57 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: dev-alinesno-platform-press
+  namespace: product-alinesno-cloud
+  labels:
+    app: dev-alinesno-platform-press
+spec:
+  replicas: 1
+  revisionHistoryLimit: 10
+  selector:
+    matchLabels:
+      app: dev-alinesno-platform-press
+  template:
+    metadata:
+      labels:
+        app: dev-alinesno-platform-press
+    spec:
+      volumes:
+        - name: timezone
+          hostPath:
+            path: /usr/share/zoneinfo/Asia/Shanghai
+      imagePullSecrets:
+      - name: docker-login
+      containers:
+      - name: dev-alinesno-platform-press
+        image: registry-vpc.cn-shenzhen.aliyuncs.com/alinesno-cloud-incubator/alinesno-platform-press:0.0.1
+        ports:
+        - containerPort: 80
+          protocol: TCP
+        volumeMounts:
+          - name: timezone
+            mountPath: /etc/localtime
+        livenessProbe:
+          tcpSocket:
+            port: 80
+          initialDelaySeconds: 60
+          periodSeconds: 30
+          timeoutSeconds: 45
+        imagePullPolicy: Always
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: dev-alinesno-platform-press
+  namespace: product-alinesno-cloud
+  labels:
+    app: dev-alinesno-platform-press
+spec:
+  ports:
+    - name: tcp-80
+      protocol: TCP
+      port: 80
+      targetPort: 80
+  selector:
+    app: dev-alinesno-platform-press
