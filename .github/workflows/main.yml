@@ -65,7 +65,7 @@ jobs:
           password: ${{ secrets.PASSWORD }}
           port: ${{ secrets.PORT }}
           source: "k8s-dev.yaml,k8s-dev-ingress.yaml"
-          target: "${{ env.PRO_VERSION }}"
+          target: "projects/${{ env.PRO_NAME }}"
 
 
 
