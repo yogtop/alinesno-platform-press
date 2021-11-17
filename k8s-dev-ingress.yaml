@@ -5,7 +5,7 @@ metadata:
   namespace: product-alinesno-cloud
 spec:
   rules:
-    - host: dev-alinesno-platform-press.dev.lbxinhu.linesno.com
+    - host: dev-alinesno-platform-press.beta.linesno.com
       http:
         paths:
           - path: /
