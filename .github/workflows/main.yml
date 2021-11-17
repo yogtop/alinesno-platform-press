@@ -36,13 +36,8 @@ jobs:
       - name: Build the Docker image
         run: |
           docker version
-          # 登录阿里云镜像仓库
           docker login --username=${{ secrets.DOCKER_USERNAME }} --password=${{ secrets.DOCKER_PASSWORD }} registry.cn-shenzhen.aliyuncs.com
-
-          # 使用Dockerfile构建镜像
           docker build . --file Dockerfile --tag ${{ env.ALIYUN_CR_HOST }}/${{ env.ALIYUN_CR_NAMESPACE }}/${{ env.PRO_NAME }}:${{ env.PRO_VERSION }}
-
-          # 推送镜像到镜像仓库
           docker push ${{ env.ALIYUN_CR_HOST }}/${{ env.ALIYUN_CR_NAMESPACE }}/${{ env.PRO_NAME }}:${{ env.PRO_VERSION }}
 
       - name: Deploy Docker multiple command
@@ -60,12 +55,23 @@ jobs:
       - name: copy k8s yaml file via ssh password
         uses: appleboy/scp-action@master
         with:
-          host: ${{ secrets.HOST }}
-          username: ${{ secrets.USERNAME }}
-          password: ${{ secrets.PASSWORD }}
-          port: ${{ secrets.PORT }}
+          host: ${{ secrets.K8S_HOST }}
+          username: ${{ secrets.K8S_HOST_USERNAME }}
+          password: ${{ secrets.K8S_HOST_PASSWORD }}
+          port: ${{ secrets.k8S_HOST_PORT }}
           source: "k8s-dev.yaml,k8s-dev-ingress.yaml"
           target: "projects/${{ env.PRO_NAME }}"
 
+      - name: Deploy Docker to K8S 
+        uses: appleboy/ssh-action@master
+        with:
+          host: ${{ secrets.K8S_HOST }}
+          username: ${{ secrets.K8S_HOST_USERNAME }}
+          password: ${{ secrets.K8S_HOST_PASSWORD }}
+          port: ${{ secrets.k8S_HOST_PORT }}
+          script: |
+            kubectl version
+            kubectl apply -f projects/${{ env.PRO_NAME }}/k8s-dev.yaml
+            kubectl apply -f projects/${{ env.PRO_NAME }}/k8s-dev-ingress.yaml
 
 
