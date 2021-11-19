@@ -112,39 +112,59 @@ module.exports = {
           '/solution/': [
             {
               title: '解决方案',
-              collapsable: false,
+              collapsable: true,
               children: genSolutionSidebar()
             },
             {
-              title: '业务中台',
-              collapsable: false,
+              title: '智慧政务',
+              collapsable: true,
+              children: genAdvancedSidebar('/')
+            },
+            {
+              title: '智慧社区',
+              collapsable: true,
+              children: genAdvancedSidebar('/')
+            },
+            {
+              title: '企业数字化',
+              collapsable: true,
+              children: genAdvancedSidebar('/')
+            },
+            {
+              title: '智慧农业',
+              collapsable: true,
+              children: genAdvancedSidebar('/')
+            },
+            {
+              title: '智慧校园',
+              collapsable: true,
               children: genAdvancedSidebar('/')
             },
             {
               title: '数据中台',
-              collapsable: false,
+              collapsable: true,
               children: genAdvancedSidebar('/')
             }
           ],
           '/design/overview': [
             {
               title: '平台介绍',
-              collapsable: false,
+              collapsable: true,
               children: genDesignSidebar(1)
             },
             {
               title: '平台架构',
-              collapsable: false,
+              collapsable: true,
               children: genDesignSidebar(2)
             },
             {
               title: '项目规划',
-              collapsable: false,
+              collapsable: true,
               children: genDesignSidebar(3)
             },
             {
               title: '建设规划',
-              collapsable: false,
+              collapsable: true,
               children: genDesignSidebar(4)
             }
           ],
@@ -187,37 +207,37 @@ module.exports = {
           '/framework/': [
             {
               title: '平台介绍',
-              collapsable: false,
+              collapsable: true,
               children: genFrameworkAboutSidebar()
             },
             {
               title: '平台需求',
-              collapsable: false,
+              collapsable: true,
               children: genFrameworkRequireSidebar()
             },
             {
               title: '平台架构',
-              collapsable: false,
+              collapsable: true,
               children: genFrameworkSidebar()
             },
             {
               title: '项目规划',
-              collapsable: false,
+              collapsable: true,
               children: genPlanSidebar('/')
             },
             {
               title: '项目管理',
-              collapsable: false,
+              collapsable: true,
               children: genManagerSidebar('/')
             },
             {
               title: '服务规划',
-              collapsable: false,
+              collapsable: true,
               children: genServiceSidebar('/')
             },
             {
               title: '平台管理',
-              collapsable: false,
+              collapsable: true,
               children: genFrameworkManagerSidebar()
             }
           ],
@@ -246,142 +266,177 @@ module.exports = {
           '/operation': [
             {
               title: '自动化运维',
-              collapsable: false,
+              collapsable: true,
               children: genAutoOperationSidebar()
             },
             {
               title: '管理环境',
-              collapsable: false,
+              collapsable: true,
               children: genManagerOperationSidebar()
             },
             {
               title: '基础软件',
-              collapsable: false,
+              collapsable: true,
               children: genBaseSoftwareSidebar()
             }
           ],
           '/data/framework/': [
             {
               title: '架构设计',
-              collapsable: false,
+              collapsable: true,
               children: genDataFrameworkSidebar()
             },
             {
               title: '数仓设计',
-              collapsable: false,
+              collapsable: true,
               children: genDataWarehouseDesignSidebar()
             },
             {
               title: '数仓采集',
-              collapsable: false,
+              collapsable: true,
               children: genDataWarehouseCollectSidebar()
             },
             {
               title: '数仓分析',
-              collapsable: false,
+              collapsable: true,
               children: genDataWarehouseAnalyzeSidebar()
             },
             {
               title: '数据可视化',
-              collapsable: false,
+              collapsable: true,
               children: genDataVisualSidebar()
             },
             {
               title: '机器学习',
-              collapsable: false,
+              collapsable: true,
               children: genMachineLearningSidebar()
             },
             {
               title: '数据管理系统',
-              collapsable: false,
+              collapsable: true,
               children: genDataManagerSidebar()
             },
             {
               title: '运维监控',
-              collapsable: false,
+              collapsable: true,
               children: genDataOperationSidebar()
             }
           ],
           '/platform/': [
             {
-              title: 'PaaS平台',
-              collapsable: false,
+              title: '产品体系',
+              collapsable: true,
+              children: genPlatformBusinessSidebar(1)
+            },
+            {
+              title: '技术平台',
+              collapsable: true,
               children: genPlatformPaaSSidebar()
             },
             {
-              title: '业务中台',
-              collapsable: false,
-              children: genPlatformBusinessSidebar()
+              title: '微服务引擎',
+              collapsable: true,
+              children: genPlatformBusinessSidebar(2)
+            },
+            {
+              title: '研发中台',
+              collapsable: true,
+              children: genPlatformBusinessSidebar(3)
+            },
+            {
+              title: '物联网中台',
+              collapsable: true,
+              children: genPlatformBusinessSidebar(4)
             },
             {
               title: '数据中台',
-              collapsable: false,
-              children: genAdvancedSidebar('/')
+              collapsable: true,
+              children: genPlatformBusinessSidebar(5)
+            },
+            {
+              title: '自动化运维',
+              collapsable: true,
+              children: genPlatformBusinessSidebar(6)
+            },
+            {
+              title: '视觉引擎',
+              collapsable: true,
+              children: genPlatformBusinessSidebar(7)
+            },
+            {
+              title: '业务中台',
+              collapsable: true,
+              children: genPlatformBusinessSidebar(8)
             }
           ],
           '/group/': [
             {
               title: '中台部门建设',
-              collapsable: false,
+              collapsable: true,
               children: genGroupDeptSidebar()
             },
             {
               title: '中台组织架构',
-              collapsable: false,
-              children: genGroupRuleSidebar()
+              collapsable: true,
+              children: genGroupRuleSidebar(0)
+            },
+            {
+              title: '组织考核标准',
+              collapsable: true,
+              children: genGroupRuleSidebar(1)
             }
           ],
           '/business/': [
             {
               title: '项目组织',
-              collapsable: false,
+              collapsable: true,
               children: genBusinessSidebar()
             },
             {
               title: '业务建设',
-              collapsable: false,
+              collapsable: true,
               children: genBusinessBuildSidebar()
             },
             {
               title: '业务定制',
-              collapsable: false,
+              collapsable: true,
               children: genBusinessBuildSidebar()
             }
           ],
           '/technique/': [
             {
               title: '目录规划',
-              collapsable: false,
+              collapsable: true,
               children: genCatalogSidebar()
             },
             {
               title: '环境搭建',
-              collapsable: false,
+              collapsable: true,
               children: genEnvironmentSidebar()
             },
             {
               title: '开发接入',
-              collapsable: false,
+              collapsable: true,
               children: genAccessSidebar()
             },
             {
               title: '开发规范',
-              collapsable: false,
+              collapsable: true,
               children: genStandardSidebar()
             },
             {
               title: '开发技术',
-              collapsable: false,
+              collapsable: true,
               children: genTechniqueSidebar()
             },
             {
               title: '配置中心',
-              collapsable: false,
+              collapsable: true,
               children: genConfigSidebar()
             },
             {
               title: '分布式技术',
-              collapsable: false,
+              collapsable: true,
               children: genDubboSidebar()
             }
           ],
@@ -735,8 +790,8 @@ function genGroupDeptSidebar() {
   })
 }
 
-function genGroupRuleSidebar() {
-  const mapArr = [
+function genGroupRuleSidebar(type) {
+  var mapArr = [
     '/group/02_管理体系/02_管理概述.md',
     '/group/02_管理体系/10_项目管理.md',
     '/group/02_管理体系/12_岗位职责.md',
@@ -753,6 +808,16 @@ function genGroupRuleSidebar() {
     '/group/02_管理体系/17_工作规范.md',
     '/group/02_管理体系/18_晋升定级.md'
   ]
+
+  if (type == 1) {
+    mapArr = [
+      '/group/03_考核标准/01_学习期考核.md',
+      '/group/03_考核标准/02_提升期考核.md',
+      '/group/03_考核标准/03_代码规范考核.md',
+      '/group/03_考核标准/04_架构师考核.md'
+    ]
+  }
+
   return mapArr.map(i => {
     return i
   })
@@ -782,8 +847,67 @@ function genPlatformPaaSSidebar() {
   })
 }
 
-function genPlatformBusinessSidebar() {
-  const mapArr = ['/platform/01_方案概述.md']
+/**
+ * 技术平台
+ */
+function genPlatformBusinessSidebar(type) {
+  var mapArr = ['/platform/01_方案概述.md']
+
+  if (type == 1) {
+    mapArr = ['/platform/business/02_产品体系.md']
+  } else if (type == 2) {
+    mapArr = [
+      '/platform/business/12_技术中台/01_微服务研发引擎.md',
+      '/platform/business/12_技术中台/01_1_前端框架引擎.md',
+      '/platform/business/12_技术中台/02_DevOps研发体系.md'
+    ]
+  } else if (type == 3) {
+    mapArr = [
+      '/platform/business/13_研发中台/01_基础权限管理平台.md',
+      '/platform/business/13_研发中台/02_云门户管理平台.md',
+      '/platform/business/13_研发中台/03_通知管理平台.md',
+      '/platform/business/13_研发中台/04_支付管理平台.md',
+      '/platform/business/13_研发中台/05_文档打印管理平台.md',
+      '/platform/business/13_研发中台/06_存储管理平台.md',
+      '/platform/business/13_研发中台/07_工作流管理平台.md',
+      '/platform/business/13_研发中台/08_数据开放平台.md',
+      '/platform/business/13_研发中台/09_分布式定时任务平台.md',
+      '/platform/business/13_研发中台/11_单点登陆管理平台.md',
+      '/platform/business/13_研发中台/12_中台管理平台.md',
+      '/platform/business/13_研发中台/13_数据报表管理平台.md',
+      '/platform/business/13_研发中台/14_CMS内容管理平台.md'
+    ]
+  } else if (type == 4) {
+    mapArr = [
+      '/platform/business/15_物联网中台/01_网关服务平台.md',
+      '/platform/business/15_物联网中台/02_物联网管理平台.md'
+    ]
+  } else if (type == 5) {
+    mapArr = [
+      '/platform/business/14_数据中台/01_ETL在线调试平台.md',
+      '/platform/business/14_数据中台/02_数据大屏管理平台.md',
+      '/platform/business/14_数据中台/03_实时计算仓库.md',
+      '/platform/business/14_数据中台/04_离线计算仓库.md'
+    ]
+  } else if (type == 6) {
+    mapArr = [
+      '/platform/business/18_运维中台/01_审计日志监控平台.md',
+      '/platform/business/18_运维中台/02_Ansible自动化操作平台.md'
+    ]
+  } else if (type == 7) {
+    mapArr = [
+      '/platform/business/16_视觉中台/01_视觉模型训练平台.md',
+      '/platform/business/16_视觉中台/02_视觉目标检测平台.md',
+      '/platform/business/16_视觉中台/03_天网视频流分析平台.md'
+    ]
+  } else if (type == 8) {
+    mapArr = [
+      '/platform/business/19_业务中台/01_代码生成脚手架.md',
+      '/platform/business/19_业务中台/02_代码快速生成器.md',
+      '/platform/business/19_业务中台/03_低代码开发平台.md'
+    ]
+  }
+
   return mapArr.map(i => {
     return i
   })
