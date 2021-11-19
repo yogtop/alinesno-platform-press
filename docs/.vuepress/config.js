@@ -85,16 +85,16 @@ module.exports = {
             link: '/group/'
           },
           {
-            text: '解决方案',
-            link: '/solution/'
-          },
-          {
             text: '业务建设',
             link: '/business/'
           },
           {
             text: '建设教程',
             link: '/learn/'
+          },
+          {
+            text: '解决方案',
+            link: '/solution/'
           },
           {
             text: '使用手册',
@@ -258,21 +258,6 @@ module.exports = {
               title: '基础软件',
               collapsable: false,
               children: genBaseSoftwareSidebar()
-            },
-            {
-              title: 'PaaS环境',
-              collapsable: false,
-              children: genEnvSidebar(2)
-            },
-            {
-              title: '大数据环境',
-              collapsable: false,
-              children: genEnvSidebar(3)
-            },
-            {
-              title: '运维环境',
-              collapsable: false,
-              children: genEnvSidebar(4)
             }
           ],
           '/data/framework/': [
@@ -321,12 +306,12 @@ module.exports = {
             {
               title: 'PaaS平台',
               collapsable: false,
-              children: genPlatformsSidebar()
+              children: genPlatformPaaSSidebar()
             },
             {
               title: '业务中台',
               collapsable: false,
-              children: genAdvancedSidebar('/')
+              children: genPlatformBusinessSidebar()
             },
             {
               title: '数据中台',
@@ -336,21 +321,31 @@ module.exports = {
           ],
           '/group/': [
             {
-              title: '组织架构',
+              title: '中台部门建设',
               collapsable: false,
-              children: genGroupSidebar()
+              children: genGroupDeptSidebar()
             },
             {
-              title: '组织架构',
+              title: '中台组织架构',
               collapsable: false,
-              children: genGroupSidebar()
+              children: genGroupRuleSidebar()
             }
           ],
           '/business/': [
             {
-              title: '业务建设',
+              title: '项目组织',
               collapsable: false,
               children: genBusinessSidebar()
+            },
+            {
+              title: '业务建设',
+              collapsable: false,
+              children: genBusinessBuildSidebar()
+            },
+            {
+              title: '业务定制',
+              collapsable: false,
+              children: genBusinessBuildSidebar()
             }
           ],
           '/technique/': [
@@ -698,7 +693,27 @@ function genFrontSidebar() {
  * @returns
  */
 function genBusinessSidebar() {
-  const mapArr = ['/business/01_方案概述.md']
+  const mapArr = [
+    '/business/01_方案概述.md',
+    '/business/project/01_多部门并发行开发.md',
+    '/business/project/02_外包团队业务开发.md',
+    '/business/project/03_代码自动生成.md'
+  ]
+  return mapArr.map(i => {
+    return i
+  })
+}
+
+function genBusinessBuildSidebar() {
+  const mapArr = [
+    '/business/build/01_业务服务Docker镜像化.md',
+    '/business/build/02_生产服务Docker镜像化.md',
+    '/business/build/03_企业开发环境私有云环境.md',
+    '/business/build/04_公有云服务采购及指导.md',
+    '/business/build/05_基于Kubernetes的容器云平台.md',
+    '/business/build/06_业务融合云原生基础设施中台.md',
+    '/business/build/07_业务中台与云平台整合.md'
+  ]
   return mapArr.map(i => {
     return i
   })
@@ -708,8 +723,36 @@ function genBusinessSidebar() {
  * 组织搭建菜单列表
  * @returns
  */
-function genGroupSidebar() {
-  const mapArr = ['/group/01_方案概述.md']
+function genGroupDeptSidebar() {
+  const mapArr = [
+    '/group/01_部门建设/01_研发部门概述.md',
+    '/group/01_部门建设/02_部门愿景.md',
+    '/group/01_部门建设/03_部门架构.md',
+    '/group/01_部门建设/04_组织结构.md'
+  ]
+  return mapArr.map(i => {
+    return i
+  })
+}
+
+function genGroupRuleSidebar() {
+  const mapArr = [
+    '/group/02_管理体系/02_管理概述.md',
+    '/group/02_管理体系/10_项目管理.md',
+    '/group/02_管理体系/12_岗位职责.md',
+    '/group/02_管理体系/19_能力模型.md',
+    '/group/02_管理体系/13_面试流程.md',
+    '/group/02_管理体系/03_入职流程.md',
+    '/group/02_管理体系/16_新人培训.md',
+    '/group/02_管理体系/08_培训体系.md',
+    '/group/02_管理体系/15_请假制度.md',
+    '/group/02_管理体系/09_离职流程.md',
+    '/group/02_管理体系/05_成长梯度.md',
+    '/group/02_管理体系/04_汇报制度.md',
+    '/group/02_管理体系/07_绩效考核.md',
+    '/group/02_管理体系/17_工作规范.md',
+    '/group/02_管理体系/18_晋升定级.md'
+  ]
   return mapArr.map(i => {
     return i
   })
@@ -719,6 +762,33 @@ function genGroupSidebar() {
  * 中台搭建菜单列表
  * @returns
  */
+function genPlatformPaaSSidebar() {
+  const mapArr = [
+    '/platform/01_方案概述.md',
+    '/platform/paas/01_持续集成平台.md',
+    '/platform/paas/02_分布式缓存.md',
+    '/platform/paas/03_代码管理平台.md',
+    '/platform/paas/04_企业私服平台.md',
+    '/platform/paas/05_代码自动检测平台.md',
+    '/platform/paas/06_项目管理平台.md',
+    '/platform/paas/07_分布式消息平台.md',
+    '/platform/paas/08_分布式注册中心.md',
+    '/platform/paas/09_监控预警平台.md',
+    '/platform/paas/10_运维转发监控中心.md',
+    '/platform/paas/11_企业私有云平台.md'
+  ]
+  return mapArr.map(i => {
+    return i
+  })
+}
+
+function genPlatformBusinessSidebar() {
+  const mapArr = ['/platform/01_方案概述.md']
+  return mapArr.map(i => {
+    return i
+  })
+}
+
 function genPlatformsSidebar() {
   const mapArr = ['/platform/01_方案概述.md']
   return mapArr.map(i => {
