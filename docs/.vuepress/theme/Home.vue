@@ -56,21 +56,21 @@
       <ul>
         <li>
           <p class="icon">
-            <img :src="$withBase('/svg/dingtalk.svg')" />
+            <img :src="$withBase('/weixin.jpg')" />
           </p>
-          <p class="label">开发交流群</p>
-          <p class="tip">Java中台研发小组</p>
+          <p class="label">社区交流群</p>
+          <p class="tip">数字化平台微信社区交流群,参与社区的讨论</p>
         </li>
         <li>
           <p class="icon">
             <img :src="$withBase('/svg/GitHub.svg')" />
           </p>
           <p class="label">欢迎参与贡献！</p>
-          <p class="tip">在 GitHub 上协作。我们期待您的加入！</p>
+          <p class="tip">在 <a href="https://github.com/alinesno-cloud/alinesno-platform-press" target="_blank" >GitHub</a> 上协作。我们期待您的加入！</p>
         </li>
         <li>
           <p class="icon">
-            <img :src="$withBase('/svg/wechat.svg')" />
+            <img :src="$withBase('/luoxiaodong.jpg')" />
           </p>
           <p class="label">请关注我们的公众号！</p>
           <p class="tip">我们会在第一时间分享新发布的特性和使用心得</p>
@@ -80,18 +80,28 @@
 
     <Content custom />
 
-    <div v-if="data.footer" class="footer">{{ data.footer }}</div>
+    <!-- footer_start -->
+    <footer-temp />
+    <!-- footer_end -->
+
+    <!-- <div v-if="data.footer" class="footer">{{ data.footer }}</div> -->
+
   </div>
 </template>
 
 <script>
 import NavLink from '@default-theme/NavLink.vue'
 import CaseTemp from './Case.vue'
+import FooterTemp from './Footer.vue'
 
 import { isGitee } from './utils'
 
 export default {
-  components: { NavLink, CaseTemp },
+  components: {
+    NavLink,
+    CaseTemp,
+    FooterTemp
+  },
   data() {
     return {
       title: '企业级数字化底座',
@@ -270,7 +280,7 @@ $accentColor = #005bd4;
   background-color: #403f4c;
   float: left;
   width: 100%;
-  margin-bottom: 50px;
+  margin-bottom: 0px;
 
   p {
     color: #fff;
@@ -296,7 +306,8 @@ $accentColor = #005bd4;
     margin: 10px;
 
     img {
-      width: 45px;
+      width: 80px;
+      border-radius: 2px;
     }
   }
 }
