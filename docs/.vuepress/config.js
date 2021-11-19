@@ -449,7 +449,11 @@ function genLearnSidebar(menus) {
       return i
     })
   } else if (menus == 2) {
-    const mapArr = ['/learn/11_视频培训.md', '/learn/12_直播培训.md']
+    const mapArr = [
+      '/learn/11_视频培训.md',
+      '/learn/11_2_数字化平台视频教程.md',
+      '/learn/12_直播培训.md'
+    ]
     return mapArr.map(i => {
       return i
     })
