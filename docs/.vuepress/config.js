@@ -442,18 +442,23 @@ module.exports = {
           ],
           '/learn/': [
             {
-              title: '社区教程',
-              collapsable: false,
+              title: '人才团队建设',
+              collapsable: true,
               children: genLearnSidebar(1)
             },
             {
-              title: '企业教程',
-              collapsable: false,
+              title: '企业中台建设',
+              collapsable: true,
               children: genLearnSidebar(2)
             },
             {
-              title: '培训文档',
-              collapsable: false,
+              title: '数字化平台建设',
+              collapsable: true,
+              children: genLearnSidebar(4)
+            },
+            {
+              title: '过程培训文档',
+              collapsable: true,
               children: genLearnSidebar(3)
             }
           ],
@@ -512,7 +517,20 @@ function genLearnSidebar(menus) {
       '/learn/41_培训文档包.md',
       '/learn/42_高级培训文档.md',
       '/learn/43_软件工具包.md',
-      '/learn/44_相关培训脚本.md'
+      '/learn/44_相关培训脚本.md',
+      '/learn/45_最佳实践.md'
+    ]
+    return mapArr.map(i => {
+      return i
+    })
+  } else if (menus == 4) {
+    const mapArr = [
+      '/learn/01_数字化/60_战略章节.md',
+      '/learn/01_数字化/61_设计章节.md',
+      '/learn/01_数字化/62_筹备章节.md',
+      '/learn/01_数字化/63_建设章节.md',
+      '/learn/01_数字化/64_落地章节.md',
+      '/learn/01_数字化/65_成熟章节.md'
     ]
     return mapArr.map(i => {
       return i
@@ -1215,14 +1233,16 @@ function genTechniqueSidebar() {
 function genSolutionSidebar() {
   const mapArr = [
     '/solution/01_方案概述.md',
-    '/solution/02_文档计划.md',
-    '/solution/03_数字化政务解决方案.md',
-    '/solution/04_数字化校园解决方案.md',
-    '/solution/05_智慧社区解决方案.md',
-    '/solution/06_智慧农业解决方案.md',
-    '/solution/07_企业数字化转型方案.md',
-    '/solution/08_智慧城市解决方案.md',
-    '/solution/20_落地实战案例.md'
+    '/solution/02_文档计划.md'
+
+    // '/solution/03_数字化政务解决方案.md',
+    // '/solution/04_数字化校园解决方案.md',
+    // '/solution/05_智慧社区解决方案.md',
+    // '/solution/06_智慧农业解决方案.md',
+    // '/solution/07_企业数字化转型方案.md',
+    // '/solution/08_智慧城市解决方案.md',
+    // '/solution/20_落地实战案例.md'
+    //
   ]
   return mapArr.map(i => {
     return i
