@@ -72,3 +72,26 @@
 ### 参与贡献
 
 工作很多年，希望能把一些不同于市面上的东西拿出来分享交流，让大家一起进步。 如果觉得项目对您有帮助，请点 Star 支持一下，欢迎加入社区群一起讨论。
+
+## 当前贡献者 ✨
+
+项目运维和管理团队，也希望有更多的同学可以参与到数字化建设 :-)
+
+<!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
+<!-- prettier-ignore-start -->
+<!-- markdownlint-disable -->
+<table>
+  <tr>
+    <td align="center"><a href="https://github.com/switchII"><img src="https://avatars.githubusercontent.com/u/9816972?v=4?s=100" width="100px;" alt=""/><br /><sub><b>LuoXiaoDong</b></sub></a></td>
+    <td align="center"><a href="https://github.com/zgm4z"><img src="https://avatars.githubusercontent.com/u/8686411?v=4?s=100" width="100px;" alt=""/><br /><sub><b>ZhuoGuangMing</b></sub></a></td>
+  </tr>
+</table>
+
+<!-- markdownlint-restore -->
+<!-- prettier-ignore-end -->
+
+<!-- ALL-CONTRIBUTORS-LIST:END -->
+
+<!--
+This project follows the [all-contributors](https://github.com/all-contributors/all-contributors) specification. Contributions of any kind welcome!
+-->
