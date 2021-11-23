@@ -270,6 +270,11 @@ module.exports = {
               children: genAutoOperationSidebar()
             },
             {
+              title: '容器镜像',
+              collapsable: true,
+              children: genManagerContainerSidebar()
+            },
+            {
               title: '管理环境',
               collapsable: true,
               children: genManagerOperationSidebar()
@@ -588,6 +593,21 @@ function genAutoOperationSidebar() {
     '/operation/document/01_基础规则.md',
     '/operation/env.md',
     '/operation/document/01_自动化操作脚本.md'
+  ]
+  return mapArr.map(i => {
+    return i
+  })
+}
+
+/**
+ * 容器镜像
+ * @returns
+ */
+function genManagerContainerSidebar() {
+  const mapArr = [
+    '/operation/35_container/01_镜像规划.md',
+    '/operation/35_container/02_制作和使用.md',
+    '/operation/35_container/03_镜像管理.md'
   ]
   return mapArr.map(i => {
     return i
