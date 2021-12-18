@@ -244,22 +244,22 @@ module.exports = {
           '/front/': [
             {
               title: '环境搭建',
-              collapsable: false,
+              collapsable: true,
               children: genEnvironmentSidebar()
             },
             {
               title: '开发接入',
-              collapsable: false,
+              collapsable: true,
               children: genAccessSidebar()
             },
             {
               title: '开发规范',
-              collapsable: false,
+              collapsable: true,
               children: genStandardSidebar()
             },
             {
               title: '开发技术',
-              collapsable: false,
+              collapsable: true,
               children: genFrontSidebar()
             }
           ],
@@ -418,6 +418,11 @@ module.exports = {
               title: '环境搭建',
               collapsable: true,
               children: genEnvironmentSidebar()
+            },
+            {
+              title: '代码生成器',
+              collapsable: true,
+              children: genCodeGenSidebar()
             },
             {
               title: '开发接入',
@@ -663,6 +668,33 @@ function genCatalogSidebar() {
 
 function genEnvironmentSidebar() {
   const mapArr = ['/technique/11_环境搭建/01_平台环境要求.md']
+  return mapArr.map(i => {
+    return i
+  })
+}
+
+function genCodeGenSidebar() {
+  const mapArr = [
+    '/technique/13_代码生成器/',
+    '/technique/13_代码生成器/01_低代码生成.md',
+    '/technique/13_代码生成器/02_前端代码生成.md',
+    '/technique/13_代码生成器/03_App代码生成.md',
+    '/technique/13_代码生成器/04_自动发布集成.md',
+    '/technique/13_代码生成器/05_监控链接集成.md',
+    '/technique/13_代码生成器/06_登陆认证集成.md',
+    '/technique/13_代码生成器/07_权限用户集成.md',
+    '/technique/13_代码生成器/08_微服务集成.md',
+    '/technique/13_代码生成器/09_容器化集成.md',
+    '/technique/13_代码生成器/10_通用CURD集成.md',
+    '/technique/13_代码生成器/11_示例代码集成.md',
+    '/technique/13_代码生成器/12_JWT集成.md',
+    '/technique/13_代码生成器/13_版本管理集成.md',
+    '/technique/13_代码生成器/14_容器仓库集成.md',
+    '/technique/13_代码生成器/15_管理后台集成.md',
+    '/technique/13_代码生成器/16_分布式存储集成.md',
+    '/technique/13_代码生成器/17_多种验证码集成.md',
+    '/technique/13_代码生成器/18_多种发布集成.md'
+  ]
   return mapArr.map(i => {
     return i
   })
