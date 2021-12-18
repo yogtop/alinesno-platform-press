@@ -437,7 +437,7 @@ module.exports = {
             {
               title: '开发技术',
               collapsable: true,
-              children: genTechniqueSidebar()
+              children: genDevTechniqueSidebar()
             },
             {
               title: '配置中心',
@@ -726,7 +726,7 @@ function genStandardSidebar() {
   })
 }
 
-function genTechniqueSidebar() {
+function genDevTechniqueSidebar() {
   const mapArr = [
     '/technique/01_开发技术/02_默认功能.md',
     '/technique/01_开发技术/30_登陆配置.md',
