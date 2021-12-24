@@ -99,6 +99,7 @@ module.exports = {
           {
             text: '使用手册',
             items: [
+              { text: '中台连接器', link: '/connect/' },
               { text: '前端手册', link: '/front/' },
               { text: '后端手册', link: '/technique/' }
             ]
@@ -406,6 +407,18 @@ module.exports = {
               title: '业务定制',
               collapsable: true,
               children: genBusinessBuildSidebar()
+            }
+          ],
+          '/connect/': [
+            {
+              title: '概述',
+              collapsable: true,
+              children: genConnectReadmeSidebar()
+            },
+            {
+              title: '连接器',
+              collapsable: true,
+              children: genConnectListSidebar()
             }
           ],
           '/technique/': [
@@ -888,6 +901,43 @@ function genGroupRuleSidebar(type) {
     ]
   }
 
+  return mapArr.map(i => {
+    return i
+  })
+}
+
+/**
+ * 中台连接器说明
+ * @returns
+ */
+function genPlatformPaaSSidebar() {
+  const mapArr = ['/connect/01_方案概述.md']
+  return mapArr.map(i => {
+    return i
+  })
+}
+
+/**
+ * 中台连接器说明
+ * @returns
+ */
+function genConnectReadmeSidebar() {
+  const mapArr = ['/connect/00_连接器说明.md']
+  return mapArr.map(i => {
+    return i
+  })
+}
+
+/**
+ * 中台连接器列表
+ * @returns
+ */
+function genConnectListSidebar() {
+  const mapArr = [
+    '/connect/01_基础权限平台.md',
+    '/connect/02_基础通知平台.md',
+    '/connect/03_公共存储平台.md'
+  ]
   return mapArr.map(i => {
     return i
   })
